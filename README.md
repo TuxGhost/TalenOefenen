@@ -1,13 +1,12 @@
 # TalenOefenen
-- Op de lokale computer installeren
+  OP DE LOCALE COMPUTER INSTALLEREN:
 -   Ga naar de hoofdmap waar je de broncode wilt zetten.
--     Je kan via de Windows Exploren naar de map gaan en vervolgens in de locatie klikken en vervolgens CMD intyppen + enter
+-     Je kan via de Windows Exploren naar de map gaan en vervolgens in de locatie klikken en  vervolgens CMD intyppen + enter
 -   Tik nu : git clone https://github.com/TuxGhost/TalenOefenen.git
+-   De broncode staat nu op je computer.
 
-De broncode staat nu op je computer.
 
-
-# De overige bron bibliotheken installeren: (nog steeds vanuit de command prompt (CMD)
+# De overige bron bibliotheken installeren: (nog steeds vanuit de command prompt (CMD))
 pip install flask
 
 # Open de Visual Code editor via de folder !!!
@@ -24,5 +23,3 @@ via Run en debug start je de toepasssing
 
 Je kan de echte werking van het programma zien in de web explorer (Chrome, edge, ...)
 type : http://localhost:81 
-
-
