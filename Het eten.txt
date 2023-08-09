@@ -1,0 +1,166 @@
+Kopen,Acheter
+De bakvorm,Le moule
+De oven,Le four
+De pan,La poele
+Verkopen,Vendre
+Het fornuis,La cuisiniere
+De kruidenierszaak,L'epicerie
+Het ingredient,L'ingredient
+De microgolf,Le migro-ondes
+Het recept,La recette
+Honger hebben,Avoir faime
+Dorst hebben,Avoire soif
+Boodschappen doen,Faire des courses
+de ananas,L'ananas
+De kers,La cerise
+De citroen,Le citron
+De aardbei,La fraise
+De framboos,La framboise
+De meloen,Le melon
+De hazelnoot,La noisette
+De noot,La noix
+De perzik,La peche
+De pruim,La prune
+De druif,Le raisinDe knoflook,L'ail
+De aubergine,L'aubergine
+De wortel,La carotte
+De celder,Le celeri
+De paddenstoel,Le champignon
+De kool,Le chou
+Het spruitje,Le chou de Bruxelles
+De bloemkool,Le chou-fleur
+De komkommer,Le concombre
+De augurk,Le cornichon
+De courgette,La courgette
+De spinazie,Les epinards
+De prinsessenboon,Le haricot vert
+De kropsla,La laitue
+De ajuin,L'oignon
+De peperselie,Le persil
+De erwt,Le petit pois
+De prei,Le poireau
+De paprika,Le poivron
+De radijs,Le radis
+De sla,La salade
+De tomaat,La tomate
+De boter,Le beurre
+De verse room,La creme fraiche
+De verse room,La creme draiche
+De kaas,Le fromage
+De melk,Le lait
+Het ei,L'oeuf
+Het zuivelproduct,Le produit laitier
+De yoghurt,Le yaourt
+Het lamsvlees,L'agneau
+De biefstuk,Le bifteck
+Het rundvlees,Le boeuf
+Het kalkoenvlees,La dinde
+De hamburger,Le hamburger
+De hesp,Le jambon
+Het varkensvlees,Le porc
+Het kippenvlees,Le poulet
+De worst,La saucisse
+Het kalfsvlees,Le veau
+Het koekje,Le bescuit
+Het snoepje,Le bonbon
+De pannekoek,Le crepe
+De croissant,Le croissant
+De chocolademousse,La mousse au chocolat
+Het gebak,La patisserie
+De fruitsla,La salade de fruits
+De taart,La tarte
+Het blikje,La boite
+De fles,La bouteille
+Het blikje,La canette
+Het drankkarton,Le carton
+Het pakje,Le paquet
+De pot,Le pot
+De zak,Le sac
+Het zakje,Le sachet
+De kabeljauw,Le cabillaud
+De garnaal,La crevette
+De mossel,La moule
+Da zalm,Le saumon
+De confituur,La confiture
+De specerij,L'epice
+De kruiden,Les herbes
+De olijfolie,L'huile d'olive
+De honing,Le miel
+De mosterd,La moutarde
+De peper,Le poivre
+De saus,La sauce
+Het zout,Le sel
+De suiker,Le sucre
+Het stokbrood,La baguette
+De ontbijtgranen,Les cereales
+De chips,les chips
+De bloem,La farine
+Het deeg,La pate
+De deegwaren,Les pates
+De pistolet,Le petit pain
+De soep,La potage
+De rijst,Le riz
+De spaghetti,Les spaghettis
+De toast,Le toast
+Gebakken,Cuite
+Heerlijk,Delicieuse
+Gebak,Hache
+licht,Leger
+zwaar,lourd
+gepeld,pele
+klaar,pret
+geraspt,rape
+Een fles,Une bouteille de
+Een lepel,Une cuillere de
+Een tiental,Une dizaine de
+Een dozijn,Une douzaine de
+Een gram,Un gramme de
+Een kilo,Un kilo de
+Een liter,Un litre de
+Een stuk,Un pocreau de
+Een beetje,Un peu de
+Een snuifje,Une pincee de
+Een tablet,Une tablette de
+Een kopje,Une tasse de
+Een sneetje,Ue tranche de
+Te veel,Trop de
+Een glas,Un verre de
+Het diepe bord,L'assiette creuse
+Het platte bord,L'assiete plate
+Het kommetje,Le bol
+Het mes,Le couteau
+De lepel,La cuillere
+De vork,La fourchette
+De pollepel,La louche
+Het kopje,La tasse
+Het glas,Le verre
+Het aperitief,L'aperitif
+Het nagerecht,Le dessert
+Het voorgerecht,L'entree
+Het vieruurtje,Le gouter
+Het gerecht,Le plat
+De drank,La boisson
+De cola,Le coca
+Het bruiswater,L'eau petillante
+Het plat water,L'eau plate
+De limonade,La limonade
+De wijn,Le vin
+Toevoegen,Ajouter
+Kloppen,Battre
+Koken op 100 graden,Faire boullir
+Snijden,Couper
+Koken,Faire cuire
+Kokkerellen,Cuisiner
+De tafel afruimen,Debarrasser la table
+Schillen,Eplucher
+Smelten,Faire fondre
+Proeven,Gouter
+Roosteren,Faire griller
+Mengen,Melanger
+In de oven zetten,Metre au four
+De tafel dekken,Mettre la table
+Doorgeven,Passer
+Klaarmaken,Preparer
+Bedienen,Servir
+Roeren,Tourner
+Gieten,Verser
