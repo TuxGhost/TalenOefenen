@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 fr = []
 nl = []
-fake1 = []
-fake2 = []
-hoeveelste = 0
-how = 0
-many = 0
-#question = fransWoord[willekeurig]
+answerB = []
+answerC = []
+vertaalWoord = 0
+optieB = 0
+optieC = 0
+lengte = len(nl)
 @app.route('/')
 @app.route('/index')
 
@@ -20,14 +20,14 @@ many = 0
 
 
 def index():
-    hoeveelste = random.randint(0,165)
-    how = random.randint(0,165)
-    many = random.randint(0,165)
-    fake1 = nl[how]
-    fake2 = nl[many]
-    fransWoord = fr[hoeveelste]
-    nederlandsWoord = nl[hoeveelste]
-    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)
+    vertaalWoord = random.randint(0,165)
+    optieB = random.randint(0,165)
+    optieC = random.randint(0,165)
+    answerB = nl[optieB]
+    answerC = nl[optieC]
+    fransWoord = fr[vertaalWoord]
+    nederlandsWoord = nl[vertaalWoord]
+    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = answerB, incorrect = answerC)
     #return 'Web app with python Flask!'
 
 lijst = open('Het eten.txt','r')
