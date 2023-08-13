@@ -17,7 +17,7 @@ many = 0
 @app.route('/index')
 
 def index():
-    if request.method ==  "GET":
+    
         hoeveelste = random.randint(0,165)
         how = random.randint(0,165)
         many = random.randint(0,165)
@@ -26,9 +26,7 @@ def index():
         fransWoord = fr[hoeveelste]
         nederlandsWoord = nl[hoeveelste]
         return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)    
-    else:
-        return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)    
-    #return 'Web app with python Flask!'
+    
 
 @app.route('/controleer',methods=['POST'])
 def controleer():
