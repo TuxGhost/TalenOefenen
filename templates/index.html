@@ -4,8 +4,20 @@
     </head>
     <body>
         <h1>Wat is de vertaling van "{{ vraag }}" ?</h1>
-        <p>A: {{antwoord}}</p>
-        <p>B: {{fout}}</p>
-        <p>C: {{wrong}}</p>
+        <div>            
+            <p>A: {{antwoord}}</p>
+            <p>B: {{fout}}</p>
+            <p>C: {{wrong}}</p>
+        </div>
+        <p>Wat is je keuze ?
+            <form action="/controleer" method="post">
+                <select name="antwoord" method="GET" action ="/">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    </select>
+                <button type="submit" value="Controleer">Controleer antwoord</button>
+            </form>            
+        </select></p>
     </body>
 </html>

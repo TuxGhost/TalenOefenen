@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 import random
 
 app = Flask(__name__)
@@ -15,20 +16,25 @@ many = 0
 @app.route('/')
 @app.route('/index')
 
-
-
-
-
 def index():
-    hoeveelste = random.randint(0,165)
-    how = random.randint(0,165)
-    many = random.randint(0,165)
-    fake1 = nl[how]
-    fake2 = nl[many]
-    fransWoord = fr[hoeveelste]
-    nederlandsWoord = nl[hoeveelste]
-    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)
+    if request.method ==  "GET":
+        hoeveelste = random.randint(0,165)
+        how = random.randint(0,165)
+        many = random.randint(0,165)
+        fake1 = nl[how]
+        fake2 = nl[many]
+        fransWoord = fr[hoeveelste]
+        nederlandsWoord = nl[hoeveelste]
+        return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)    
+    else:
+        return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = fake1, wrong = fake2)    
     #return 'Web app with python Flask!'
+
+@app.route('/controleer',methods=['POST'])
+def controleer():
+    #antwoord = request.forms['antwoord']
+    antwoord = request.form.get("antwoord")
+    return 'functie moet verder uitgewerkt worden'
 
 lijst = open('Het eten.txt','r')
 for text in lijst:
