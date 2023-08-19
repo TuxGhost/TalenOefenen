@@ -39,10 +39,12 @@ if optieABC == 2:
     oplossing = 'C'
 
 @app.route('/')
-@app.route('/index', methods = ['GET'])
-
 def index():
-    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+    return render_template('Frans.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+
+@app.route('/Frans', methods = ['GET'])
+def frans():
+    return render_template('Frans.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
 
         
 @app.route('/controleer',methods=['POST'])
