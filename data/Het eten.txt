@@ -122,7 +122,7 @@ Een beetje,Un peu de
 Een snuifje,Une pincee de
 Een tablet,Une tablette de
 Een kopje,Une tasse de
-Een sneetje,Ue tranche de
+Een sneetje,Une tranche de
 Te veel,Trop de
 Een glas,Un verre de
 Het diepe bord,L'assiette creuse

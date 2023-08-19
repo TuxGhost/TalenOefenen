@@ -1,41 +1,58 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 import random
 
 app = Flask(__name__)
 
 fr = []
 nl = []
-answerB = []
-answerC = []
-vertaalWoord = 0
-optieB = 0
-optieC = 0
-lengte = len(nl)
-@app.route('/')
-@app.route('/index')
+tekstJ = 'correct.'
+tekstF = 'incorrect.'
+score = 0
 
-
-
-
-
-def index():
-    vertaalWoord = random.randint(0,165)
-    optieB = random.randint(0,165)
-    optieC = random.randint(0,165)
-    answerB = nl[optieB]
-    answerC = nl[optieC]
-    fransWoord = fr[vertaalWoord]
-    nederlandsWoord = nl[vertaalWoord]
-    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = nederlandsWoord, fout = answerB, incorrect = answerC)
-    #return 'Web app with python Flask!'
-
-lijst = open('Het eten.txt','r')
+lijst = open('data\Het eten.txt','r')
 for text in lijst:
     w = text.split(",")
     nl.append(w[0])
     fr.append(w[1].replace("\n", "")) 
 
-  
+lengte = len(fr)
+optieA = random.randint(0,lengte)
+optieB = random.randint(0,lengte)  
+optieC = random.randint(0,lengte) 
+optieABC = random.randint(0,2)
+if optieA == optieB or optieB == optieC or optieC == optieA:
+    optieA = random.randint(0,lengte)
+    optieB = random.randint(0,lengte)  
+oplossingA = nl[optieA]
+oplossingB = nl[optieB]
+oplossingC = nl[optieC]
+if optieABC == 0:
+    fransWoord = fr[optieA]
+    oplossing = 'A'
+if optieABC == 1:
+    fransWoord = fr[optieB]
+    oplossing = 'B'
+if optieABC == 2:
+    fransWoord = fr[optieC]
+    oplossing = 'C'
+
+@app.route('/')
+@app.route('/index', methods = ['GET'])
+
+def index():
+    return render_template('index.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+
+        
+@app.route('/controleer',methods=['POST'])
+def controleer():
+    antwoord = request.form.get("antwoord")
+    tekst = 'Wat denk je zelf?'
+    if antwoord == oplossing:
+        tekst = 'Uw antwoord is correct.'
+    else:
+        tekst = 'Uw antwoord is foutief.'
+    return render_template('controleer.html', title = 'controle', tekst = tekst)
 
 app.run(host='0.0.0.0', port=9001)
