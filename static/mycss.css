@@ -1,5 +1,8 @@
 body{
         /*color : #00FF00;*/
-        color: rgba(300, 63, 33, 0.76);
-        background-color:beige;
+        color:rgb(215, 250, 246);
+        background-color:rgb(95, 181, 227);
+}
+.foutboodschap {
+        color: red;
 }

@@ -7,17 +7,17 @@ app = Flask(__name__)
 
 fr = []
 nl = []
-tekstJ = 'correct.'
-tekstF = 'incorrect.'
-score = 0
-
-lijst = open('data\Het eten.txt','r')
+lijst = open('./data/Het eten.txt','r')
 for text in lijst:
     w = text.split(",")
     nl.append(w[0])
     fr.append(w[1].replace("\n", "")) 
-
+tekstJ = 'correct.'
+tekstF = 'incorrect.'
+score = 0
 lengte = len(fr)
+
+
 optieA = random.randint(0,lengte)
 optieB = random.randint(0,lengte)  
 optieC = random.randint(0,lengte) 
@@ -38,15 +38,23 @@ if optieABC == 2:
     fransWoord = fr[optieC]
     oplossing = 'C'
 
+
 @app.route('/')
 def index():
-    return render_template('Frans.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+    return render_template('index.html')
 
 @app.route('/Frans', methods = ['GET'])
-def frans():
+def frans(): 
     return render_template('Frans.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
 
-        
+@app.route('/Engels', methods = ['GET'])
+def engels():
+    return render_template('Engels.html')
+
+@app.route('/Duits', methods = ['GET'])
+def duits():
+    return render_template('Duits.html')
+
 @app.route('/controleer',methods=['POST'])
 def controleer():
     antwoord = request.form.get("antwoord")
@@ -56,5 +64,6 @@ def controleer():
     else:
         tekst = 'Uw antwoord is foutief.'
     return render_template('controleer.html', title = 'controle', tekst = tekst)
+
 
 app.run(host='0.0.0.0', port=9001)
