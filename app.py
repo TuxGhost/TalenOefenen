@@ -5,6 +5,7 @@ import random
 
 app = Flask(__name__)
 
+woordenGenereren = True
 fr = []
 nl = []
 lijst = open('./data/Het eten.txt','r')
@@ -17,7 +18,7 @@ tekstF = 'incorrect.'
 score = 0
 lengte = len(fr)
 
-
+#while woordenGenereren:
 optieA = random.randint(0,lengte)
 optieB = random.randint(0,lengte)  
 optieC = random.randint(0,lengte) 
@@ -38,22 +39,21 @@ if optieABC == 2:
     fransWoord = fr[optieC]
     oplossing = 'C'
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/Frans', methods = ['GET'])
 def frans(): 
-    return render_template('Frans.html', title='Quiz', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+    return render_template('Frans.html', title='Quiz Frans', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
 
 @app.route('/Engels', methods = ['GET'])
 def engels():
-    return render_template('Engels.html')
+    return render_template('Engels.html', title='Quiz Engels')
 
 @app.route('/Duits', methods = ['GET'])
 def duits():
-    return render_template('Duits.html')
+    return render_template('Duits.html', title='Quiz Duits')
 
 @app.route('/controleer',methods=['POST'])
 def controleer():
@@ -64,6 +64,5 @@ def controleer():
     else:
         tekst = 'Uw antwoord is foutief.'
     return render_template('controleer.html', title = 'controle', tekst = tekst)
-
 
 app.run(host='0.0.0.0', port=9001)
