@@ -6,3 +6,7 @@ body{
 .foutboodschap {
         color: red;
 }
+#test {
+        color:blueviolet;
+        background-color: bisque;
+}

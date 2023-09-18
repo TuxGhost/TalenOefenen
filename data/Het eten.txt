@@ -80,7 +80,7 @@ Het zakje,Le sachet
 De kabeljauw,Le cabillaud
 De garnaal,La crevette
 De mossel,La moule
-Da zalm,Le saumon
+De zalm,Le saumon
 De confituur,La confiture
 De specerij,L'epice
 De kruiden,Les herbes

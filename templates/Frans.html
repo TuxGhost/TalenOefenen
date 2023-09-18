@@ -6,19 +6,16 @@
     </head>
     <body>
         <div>
-        <h1>Wat is de vertaling van "{{ vraag }}" ? </h1>
-            <p style="font-size:30px" style="font-family:verdana">A: {{antwoord}}</p>
-            <p style="font-size:30px" style="font-family:verdana">B: {{antiwoord}}</p>
-            <p style="font-size:30px" style="font-family:verdana">C: {{woordant}}</p>
-        </div>
+            <h1>Wat is de vertaling van "{{ vraag }}" ? </h1>
+    
         <div> <p style="font-family:verdana">Wat is je keuze ?
             <form action="/controleer" method="post">
-                <select name="antwoord" method="GET" action ="/">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
+                <select name="antwoord" method="GET" action ="/" multiple>
+                    <option value="A">{{antwoord}}</option>
+                    <option value="B">{{antiwoord}}</option>
+                    <option value="C">{{woordant}}</option>
                     </select>
-                <button type="submit" value="Controleer">Controleer antwoord</button>
+                <button type="submit" value="Controleer">{{antwoord}}</button>
             </form>            
         </select></p></div>
     </body>
