@@ -1,10 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="nl">
     <head>
-        <title style="font-size:90px">{{ title }}</title>
+        <title>{{ title }}</title>
         <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='mycss.css')}}">
     </head>
     <body>
-        <div><h1>{{tekst}}</h1>
+        <div><h1 id="test">{{tekst}}</h1>
+            <h2>{{punten}}</h2>
             <a href="/Frans">nieuwe vraag</a>
-        </div></body>
+        </div>
+    </body>
 </html>

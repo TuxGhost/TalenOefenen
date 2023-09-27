@@ -1,3 +1,7 @@
 Mijn naam,My name
 Het eten,The food
 Mijn dans,My dance
+a,Bc
+vraagf,q
+heightg,y
+i,t

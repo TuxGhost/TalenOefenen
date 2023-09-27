@@ -2,7 +2,31 @@ body{
         /*color : #00FF00;*/
         color:rgb(215, 250, 246);
         background-color:rgb(95, 181, 227);
+        text-align: center;
 }
 .foutboodschap {
-        color: red;
+        color:rgb(255, 173, 173);
+        background-color:rgb(216, 71, 71);}
+#test {
+        color:rgb(173, 190, 255);
+        background-color:rgb(71, 122, 216);
+}
+
+title{
+        font-size: xx-large;
+
+}
+
+p{
+        font-size: xx-large
+        
+}
+
+button{
+        color:deeppink;
+        padding: 15;
+        height: 50px;
+        width: 180px;
+        font-size: large;
+        
 }
