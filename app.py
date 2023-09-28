@@ -99,6 +99,27 @@ def controleer():
         tekst = 'Uw antwoord is correct.'
     else:
         tekst = 'Uw antwoord is fout.'
-    return render_template('controleer.html', title = 'controle', tekst = tekst)
+    #return render_template('controleer.html', title = 'controle', tekst = tekst)
+
+    optieA = random.randint(0,lengte)
+    optieB = random.randint(0,lengte)  
+    optieC = random.randint(0,lengte) 
+    optieABC = random.randint(0,2)
+    if optieA == optieB or optieB == optieC or optieC == optieA:
+        optieA = random.randint(0,lengte)
+        optieB = random.randint(0,lengte)  
+    oplossingA = Enl[optieA]
+    oplossingB = Enl[optieB]
+    oplossingC = Enl[optieC]
+    if optieABC == 0:
+        engelsWoord = en[optieA]
+        session["oplossing"] = 'A'
+    if optieABC == 1:
+        engelsWoord = en[optieB]
+        session["oplossing"] = 'B'
+    if optieABC == 2:
+        engelsWoord = en[optieC]
+        session["oplossing"] = 'C'
+    return render_template('taal.html', title = 'controle', tekst = tekst,vraag = engelsWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
 
 app.run(host='0.0.0.0', port=9001)
