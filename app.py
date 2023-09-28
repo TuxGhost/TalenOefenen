@@ -2,11 +2,15 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
+from flask import session
 import random
 
 random.seed()
 
+random.seed()
+
 app = Flask(__name__)
+app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 
 woordenGenereren = True
@@ -98,6 +102,7 @@ def controleer():
     if antwoordA == session["oplossing"] or antwoordB == session["oplossing"] or antwoordC== session["oplossing"]:
         tekst = 'Uw antwoord is correct.'
     else:
+        tekst = 'Uw antwoord is fout.'
         tekst = 'Uw antwoord is fout.'
     return render_template('controleer.html', title = 'controle', tekst = tekst)
 
