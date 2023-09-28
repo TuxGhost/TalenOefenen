@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="nl">
-    <head>
-        <title>{{ title }}</title>
-        <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='mycss.css')}}">
-    </head>
-    <body>
+{% extends 'template.html' %}
+
+{% block talen %}
         <div>
             <h1>Wat is de vertaling van "{{ vraag }}" ? </h1>
         <div> <p>Wat is je keuze ?</p>
@@ -15,5 +11,4 @@
             </form>
         </div>
         </div>
-    </body>
-</html>
+{% endblock %}

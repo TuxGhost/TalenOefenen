@@ -1,3 +1,4 @@
 *.pyc
 env
 
+templates/Taal copy.html
