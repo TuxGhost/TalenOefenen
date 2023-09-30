@@ -2,11 +2,15 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
+from flask import session
 import random
 
 random.seed()
 
+random.seed()
+
 app = Flask(__name__)
+app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 
 woordenGenereren = True
