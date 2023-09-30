@@ -7,10 +7,7 @@ import random
 
 random.seed()
 
-random.seed()
-
 app = Flask(__name__)
-app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 
 woordenGenereren = True
@@ -30,8 +27,6 @@ for text in lijstEn:
     en.append(w[1].replace("\n", "")) 
 tekstJ = 'correct.'
 tekstF = 'incorrect.'
-score = 0
-
 oplossing =''
 test = ""
 
