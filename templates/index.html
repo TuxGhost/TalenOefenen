@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="nl">
-    <head>
-        <title>talen</title>
-        <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='mycss.css')}}">
-    </head>
-    <body>
+{% extends 'template.html' %}
+
+{% block pagina%}
         <div>
         <h1 id="mirthe">Welkom</h1>
         </div>
@@ -14,5 +10,4 @@
         <a href="/Engels">Engels</a>
         <a href="/Duits">Duits</a>
         </div>
-    </body>
-</html>
+{% endblock %}
