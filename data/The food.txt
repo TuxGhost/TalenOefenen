@@ -1,7 +1,10 @@
 Mijn naam,My name
 Het eten,The food
 Mijn dans,My dance
-a,Bc
-vraagf,q
-heightg,y
-i,t
+mijn jas,my jacket
+mijn lievelings,my favourite
+mijn stoel,my chair
+mijn pennezak,my pencil case
+jouw klok,your clock
+zijn rugzak,his backpack
+onze klas,our class

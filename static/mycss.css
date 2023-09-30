@@ -1,8 +1,12 @@
-body{
+head {
+       font-size:90px
+}
+body {
         /*color : #00FF00;*/
         color:rgb(215, 250, 246);
         background-color:rgb(95, 181, 227);
         text-align: center;
+        font-size:25px
 }
 .foutboodschap {
         color:rgb(255, 173, 173);
@@ -12,21 +16,26 @@ body{
         background-color:rgb(71, 122, 216);
 }
 
-title{
+title {
         font-size: xx-large;
 
 }
 
-p{
+p {
         font-size: xx-large
         
 }
 
-button{
+button {
         color:deeppink;
         padding: 15;
         height: 50px;
         width: 180px;
         font-size: large;
         
+}
+.test {
+        background-color: black;
+        color: chartreuse;
+        font-family:verdana;
 }
