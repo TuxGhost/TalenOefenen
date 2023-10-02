@@ -3,10 +3,16 @@ head {
 }
 body {
         /*color : #00FF00;*/
-        color:rgb(215, 250, 246);
-        background-color:rgb(95, 181, 227);
+        color:rgb(0, 110, 220);
+        background-color:rgb(113, 176, 210);
         text-align: center;
         font-size:25px
+}
+
+#rechts{
+        color:rgb(255, 255, 255);
+        text-align: right;
+
 }
 .foutboodschap {
         color:rgb(255, 173, 173);
@@ -35,7 +41,7 @@ button {
         
 }
 .test {
-        background-color: black;
-        color: chartreuse;
+        background-color: rgb(32, 56, 126);
+        color: rgb(150, 156, 201);
         font-family:verdana;
 }
