@@ -2,15 +2,10 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
-from flask import session
 import random
 
 random.seed()
-
-random.seed()
-
 app = Flask(__name__)
-app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 
 woordenGenereren = True
@@ -41,7 +36,7 @@ def index():
 
 @app.route('/Frans', methods = ['GET'])
 def frans():
-    lengte = len(nl)
+    lengte = len(nl)-1
     optieA = random.randint(0,lengte)
     optieB = random.randint(0,lengte)  
     optieC = random.randint(0,lengte) 
@@ -65,7 +60,7 @@ def frans():
 
 @app.route('/Engels', methods = ['GET'])
 def engels():
-    lengte = len(Enl)
+    lengte = len(Enl)-1
     optieA = random.randint(0,lengte)
     optieB = random.randint(0,lengte)  
     optieC = random.randint(0,lengte) 
