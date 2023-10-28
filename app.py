@@ -2,9 +2,11 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
+from flask import session
 import random
 
 random.seed()
+
 app = Flask(__name__)
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 
@@ -25,8 +27,6 @@ for text in lijstEn:
     en.append(w[1].replace("\n", "")) 
 tekstJ = 'correct.'
 tekstF = 'incorrect.'
-score = 0
-
 oplossing =''
 test = ""
 
@@ -34,12 +34,13 @@ test = ""
 def index():
     return render_template('index.html')
 
+
 @app.route('/Frans', methods = ['GET'])
 def frans():
-    lengte = len(nl)-1
+    lengte = len(nl)
     optieA = random.randint(0,lengte)
     optieB = random.randint(0,lengte)  
-    optieC = random.randint(0,lengte) 
+    optieC = random.randint(0,lengte)
     optieABC = random.randint(0,2)
     if optieA == optieB or optieB == optieC or optieC == optieA:
         optieA = random.randint(0,lengte)
@@ -57,15 +58,15 @@ def frans():
         fransWoord = fr[optieC]
         session["oplossing"] = 'C'
     return render_template('TaalFR.html', title='Quiz Frans', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
-
+ 
 @app.route('/Engels', methods = ['GET'])
 def engels():
     lengte = len(Enl)-1
     optieA = random.randint(0,lengte)
     optieB = random.randint(0,lengte)  
-    optieC = random.randint(0,lengte) 
+    optieC = random.randint(0,lengte)
     optieABC = random.randint(0,2)
-    if optieA == optieB or optieB == optieC or optieC == optieA:
+    while optieA == optieB or optieB == optieC or optieC == optieA:
         optieA = random.randint(0,lengte)
         optieB = random.randint(0,lengte)  
     oplossingA = Enl[optieA]
