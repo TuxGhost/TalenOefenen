@@ -1,12 +1,47 @@
-body{
+head {
+       font-size:90px
+}
+body {
         /*color : #00FF00;*/
-        color:rgb(215, 250, 246);
-        background-color:rgb(95, 181, 227);
+        color:rgb(0, 110, 220);
+        background-color:rgb(113, 176, 210);
+        text-align: center;
+        font-size:25px
+}
+
+#rechts{
+        color:rgb(255, 255, 255);
+        text-align: right;
+
 }
 .foutboodschap {
-        color: red;
-}
+        color:rgb(255, 173, 173);
+        background-color:rgb(216, 71, 71);}
 #test {
-        color:blueviolet;
-        background-color: bisque;
+        color:rgb(173, 190, 255);
+        background-color:rgb(71, 122, 216);
+}
+
+title {
+        font-size: xx-large;
+
+}
+
+p {
+        font-size: xx-large
+        
+}
+
+button {
+        color:deeppink;
+        padding: 15;
+        height: 50px;
+        width: 180px;
+        font-size: large;
+        
+}
+.test {
+        background-color: rgb(32, 56, 126);
+        color: rgb(150, 156, 201);
+        font-family:verdana;
 }
