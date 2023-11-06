@@ -1,0 +1,123 @@
+de huwelijksverjaardag,l'anniversaire de mariage
+de fuif,la boum
+de begrafenis,l'enterrenment
+het verjaardagfeestje,le fete d'anniversaire
+Moederdag,la fete des Meres
+Vaderdag,la fete des Pres
+de kermis,la kermesse
+het huwelijk,le mariage
+de dood,la mort
+de geboorte,la naisseance
+Nieuwjaar,le Nouvel An
+de receptie,la reception
+Sinterklaas,la Saint-Nicolas
+Oudejaarsavond,la Saint-Sylvestre
+Valentijnsdag,la Saint-Valentin
+het feest,la soiree
+de karaokeavond,la soiee karaoke
+het uitje,la sortie
+uit eten gaan,aller au restorant
+18 jaar oud zijn,avoir 18 ans
+vieren,celebrer
+dansen,danser
+met z'n vieren zijn,etre quatre
+feesten,faire la fete
+vieren,feter
+feesten,s'amuser follement
+uit de bol gaan,s'eclater
+zich verkleden,se deguiser
+trouwen,se marier
+zicht vervelen,s'ennuyer
+uitgaan in een discotheek,sortir en boite
+wensen,souhaiter
+het adres,l'adresse
+de sfeer,l'ambiance
+het aperitief,l'apero
+het bier,la biere
+het drankje,la boisson
+de kaars,la bougie
+de discobal,la boule disco
+het boeket bloemen,le bouquet de fleurs
+het budget,le budget
+het geschenk,le cadeau
+de coffie,le cafe
+de e-kaart,la carte virtuelle
+de bestelling,la commande
+de confetti,les confettis
+de contactgegevens,les coordonnees
+de dans,la danse
+de versiering,la decoration
+de dj,le DJ
+de geschenkverpakking,l'emballage cadeau
+het bruiswater,l'eau petillante
+het plat water,l'eau plate
+het gebakje,le gateau
+de slinger,la guirlande
+de uitnodiging,l'invitation
+de boodschappenlijst,la liste d'achats
+de mocktail,la mocktaile
+het tafelkleed,la nappe
+de gelegenheid,l'occasion
+het vriendje,le petit amie
+het vriendinnetje,le petit copine
+de fotocabine,le photomaton
+de dansvloer,la piste de danse
+de afspraak,le rendez-vous
+het feestmaal,le repas de fete
+de feestzaal,la salle des fetes
+de kerstboom,le sapin de Noel
+het servet,la serviette
+de ster van de dag,la star du jour
+de verassing,la surprise
+de ijsthee,le the glace
+de wijn,le vin
+de vj,le VJ
+betaalbaar,adordable
+gezellig,agreable
+plezierig,amusant
+druk,anime
+duur,cher
+leuk,chouette
+duur,chere
+verkleed,desguise
+vervelend,ennuyeux
+uitstekend,excellent
+fantastisch,formidable
+gelukkig,heureux
+onvergetelijk,inoubliable
+vrolijk kerstmis,joyeux Noel
+zenuwachtig,nerveux
+prima,nickel
+origineel,original
+niet slecht,pas mal
+niet zo goed,pas terrible
+gestresseerd,stresse
+verrassend,surprenant
+verrast,surpris
+aanvaarden,accepter
+vergezellen,accompagner
+aankondigen,annoncer
+annuleren,annuler
+iemand opbellen,appeler quelqu'un
+waarderen,apprecier
+bijwonen,assister a
+bestellen,commander
+biginnen met,commencer par
+duur zijn,couter cher
+de tafel afruimen,debrasser la table
+versieren,decorer
+uitgeven,depenser
+iemand een handje helpen,donner un coep de main a quelqu'un
+inpakken,emballer
+versturen,envoyer
+op zoek zijn naar,etre a la recherche de
+een afspraak maken,fixer rendez-vous
+uitnodigen,inviter
+de tafel dekken,mettre la table
+plaatsen,placer
+ontvangen,recevoir
+ervan dromen te,rever de
+zich klaarmaken,se reparer
+bedienen,servir
+uitblazen,souffler
+ter gelegenheid van,a l'occasion de

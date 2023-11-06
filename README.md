@@ -17,7 +17,6 @@ via Run en debug start je de toepasssing
   * Warning this is a development server.  Do not use it in a production deployment.  Use a production WSGI server instead.
   * * Running on all addresses (0.0.0.0)
     * running on http://127.0.0.1.81
-   
     * Press CTRL+C to quit
     * ....
 

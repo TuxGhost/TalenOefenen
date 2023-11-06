@@ -15,7 +15,7 @@ fr = []
 nl = []
 en = []
 Enl = []
-lijstFr = open('./data/Het eten.txt','r')
+lijstFr = open('./data/feest.txt','r')
 for text in lijstFr:
     w = text.split(",")
     nl.append(w[0])
@@ -28,7 +28,7 @@ for text in lijstEn:
 tekstJ = 'correct.'
 tekstF = 'incorrect.'
 oplossing =''
-test = ""
+
 
 @app.route('/')
 def index():
@@ -107,6 +107,7 @@ def controleerEN():
     antwoordA = request.form.get("antwoordA")
     antwoordB = request.form.get("antwoordB")
     antwoordC = request.form.get("antwoordC")
+    antwoord = request.form.get("antwoord")
     opl = session.get("oplossing")
     print("oplossing: ")
     print(opl)

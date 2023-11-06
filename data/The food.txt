@@ -1,7 +1,8 @@
 Mijn naam,My name
 Het eten,The food
 Mijn dans,My dance
-a,Bc
-vraagf,q
-heightg,y
-i,t
+vraag,question
+hoogte,heigth
+memories,herinneringen
+kaas,cheese
+olijf,olive
