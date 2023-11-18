@@ -1,3 +1,7 @@
 *.pyc
 env
 venv*
+/.vs/TalenOefenen/v17
+/obj/Any CPU/Debug
+/bin
+/.vs/TalenOefenen/FileContentIndex

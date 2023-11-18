@@ -4,6 +4,7 @@ from flask import request
 from flask import session
 from flask import session
 import random
+import TaalModelPage
 
 random.seed()
 
@@ -57,8 +58,13 @@ def frans():
     if optieABC == 2:
         fransWoord = fr[optieC]
         session["oplossing"] = 'C'
-    return render_template('TaalFR.html', title='Quiz Frans', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
- 
+    taalModelPage =  TaalModelPage.TaalModelPage()
+    taalModelPage.Vraag = fransWoord
+    taalModelPage.Antwoord = oplossingA
+    taalModelPage.Antiwoord = oplossingB
+    taalModelPage.Woordant = oplossingC
+    return render_template('TaalFR.html', title='Quiz Frans', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC, model = taalModelPage)
+
 @app.route('/Engels', methods = ['GET'])
 def engels():
     lengte = len(Enl)-1
@@ -81,6 +87,7 @@ def engels():
     if optieABC == 2:
         engelsWoord = en[optieC]
         session["oplossing"] = 'C'
+    
     return render_template('TaalEN.html', title='Quiz Engels', vraag = engelsWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
 
 @app.route('/Duits', methods = ['GET'])
@@ -118,4 +125,10 @@ def controleerEN():
         tekst = 'Uw antwoord is fout.'
     return render_template('controleerEN.html', title = 'controle', tekst = tekst)
 
-app.run(host='0.0.0.0', port=9001)
+@app.errorhandler(500)
+def foutboodschap():
+    render_template("error.html")
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=9001)
