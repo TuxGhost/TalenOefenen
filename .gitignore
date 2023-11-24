@@ -1,3 +1,9 @@
+# python hulpextensies voor lokaal gebruik
 *.pyc
 env
 venv*
+bin
+obj
+# visual studio persoonlijke omgeving.
+.vs
+
