@@ -14,6 +14,30 @@ body {
         text-align: right;
 
 }
+title {
+        font-size:large;
+}
+label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+select {
+        width:max-content;
+        height: max-content;
+        font-size: large;
+        overflow-y:auto;
+}
+title {
+        font-size:large;
+}
+label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+select {
+        width:max-content;
+        height: max-content;
+        font-size: large;
+        overflow-y:auto;
+}
 .foutboodschap {
         color:rgb(255, 173, 173);
         background-color:rgb(216, 71, 71);}

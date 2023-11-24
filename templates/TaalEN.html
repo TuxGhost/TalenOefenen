@@ -9,13 +9,13 @@
             <a href="/">andere taal</a>
         </div>
         <div>
-            <h1>Wat is de vertaling van "{{ vraag }}" ? </h1>
+            <h1>Wat is de vertaling van "{{ model.Vraag }}" ? </h1>
         </div>
         <div> <p>Wat is je keuze?</p>
             <form action="/controleerEN" method="post">
-                <button type="submit" name="antwoordA" value="A">{{antwoord}}</button>
-                <button type="submit" name="antwoordB" value="B">{{antiwoord}}</button>
-                <button type="submit" name="antwoordC" value="C">{{woordant}}</button>
+                <button type="submit" name="antwoordA" value="A">{{model.Antwoord}}</button>
+                <button type="submit" name="antwoordB" value="B">{{model.Antiwoord}}</button>
+                <button type="submit" name="antwoordC" value="C">{{model.Woordant}}</button>
             </form>
         </div>
     </body>

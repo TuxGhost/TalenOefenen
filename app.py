@@ -63,7 +63,7 @@ def frans():
     taalModelPage.Antwoord = oplossingA
     taalModelPage.Antiwoord = oplossingB
     taalModelPage.Woordant = oplossingC
-    return render_template('TaalFR.html', title='Quiz Frans', vraag = fransWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC, model = taalModelPage)
+    return render_template('TaalFR.html', title='Quiz Frans', model = taalModelPage)
 
 @app.route('/Engels', methods = ['GET'])
 def engels():
@@ -87,8 +87,12 @@ def engels():
     if optieABC == 2:
         engelsWoord = en[optieC]
         session["oplossing"] = 'C'
-    
-    return render_template('TaalEN.html', title='Quiz Engels', vraag = engelsWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC)
+    taalModelPage =  TaalModelPage.TaalModelPage()
+    taalModelPage.Vraag = engelsWoord
+    taalModelPage.Antwoord = oplossingA
+    taalModelPage.Antiwoord = oplossingB
+    taalModelPage.Woordant = oplossingC
+    return render_template('TaalEN.html', title='Quiz Engels', vraag = engelsWoord , antwoord = oplossingA, antiwoord = oplossingB, woordant = oplossingC,model = taalModelPage)
 
 @app.route('/Duits', methods = ['GET'])
 def duits():
@@ -131,4 +135,4 @@ def foutboodschap():
 
 
 if __name__ == "__main__":
-    app.,nrun(host='0.0.0.0', port=9001)
+    app.run(host='0.0.0.0', port=9001)

@@ -1,0 +1,25 @@
+<html lang="nl-BE">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <meta http-equiv="refresh" content="text/html">
+        <title>{{ title }}</title>        
+        <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='mycss.css')}}">
+    </head>
+    <body>
+        <div>
+            <h1>Wat is de vertaling van "{{ vraag }}" ? </h1>
+    
+        <div> 
+            <form action="/controleer" method="post">
+                <label name="vraag" for="vraag">Wat is je keuze ?</label>
+                <select id="vraag" name="antwoord" method="GET" action ="/" multiple>
+                    <option value="A">{{antwoord}}</option>
+                    <option value="B">{{antiwoord}}</option>
+                    <option value="C">{{woordant}}</option>
+                    </select>
+                <button type="submit" value="Controleer">{{antwoord}}</button>
+            </form>            
+        </select></p></div>
+    </body>
+</html>
