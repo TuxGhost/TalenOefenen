@@ -5,11 +5,13 @@ from flask import session
 from flask import session
 import random
 import TaalModelPage
+from webapi.woordenlijstFrans import woordenlijstFrans_bp
 
 random.seed()
 
 app = Flask(__name__)
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
+app.register_blueprint(woordenlijstFrans_bp)
 
 woordenGenereren = True
 fr = []
@@ -129,7 +131,10 @@ def controleerEN():
         tekst = 'Uw antwoord is fout.'
     return render_template('controleerEN.html', title = 'controle', tekst = tekst)
 
+
+
 @app.errorhandler(500)
+
 def foutboodschap():
     render_template("error.html")
 
