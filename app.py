@@ -3,7 +3,8 @@ from flask import render_template
 from flask import request
 from flask import session
 from flask import session
-from flask import CORS
+from flask_cors import CORS
+from logging.config import dictConfig
 import random
 import TaalModelPage
 from webapi.woordenlijstFrans import woordenlijstFrans_bp
@@ -12,7 +13,8 @@ from webapi.woordenlijstFrans import woordenlijstFrans_bp
 random.seed()
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
+
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
 app.register_blueprint(woordenlijstFrans_bp)
 

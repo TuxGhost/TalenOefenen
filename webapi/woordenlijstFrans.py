@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template,abort,jsonify
 from jinja2 import TemplateNotFound
+from flask_cors import CORS
 
 woordenlijstFrans_bp = Blueprint("talenPagina",__name__)
 
@@ -11,8 +12,10 @@ def woordenlijstFrans():
     woordenschat = []
     lijst = open('./data/feest.txt','r')    
     lijnen = [lijn.rstrip("\n") for lijn in lijst]    
-        
+    for woordcombi in lijnen:
+        wc = woordcombi.split(',')          
+        woordenschat.append({'nederlands': wc[0],'frans': wc[1]})
             
-    return jsonify(lijnen);
+    return jsonify(woordenschat)
     
     
