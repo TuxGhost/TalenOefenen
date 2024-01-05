@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,abort,jsonify
+from flask import Blueprint, render_template,abort,jsonify,request
 from jinja2 import TemplateNotFound
 from flask_cors import CORS
 
@@ -18,4 +18,11 @@ def woordenlijstFrans():
             
     return jsonify(woordenschat)
     
-    
+@woordenlijstFrans_bp.route('/addwoordcombinatie',methods=['POST'])    
+def addwoordencombinatie():
+    data = request.json 
+    print(data)
+    nederlands = data.get('nederlands')
+    frans = data.get('frans')    
+    #this function is useless for the moment
+    return jsonify('Ok')
