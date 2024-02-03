@@ -2,7 +2,9 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
-from flask import session
+from flask import redirect
+from flask import url_for
+from requests.auth import HTTPBasicAuth
 from flask_cors import CORS
 from logging.config import dictConfig
 import requests
@@ -157,6 +159,27 @@ def woordenlijst():
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+    
+@app.route("/nieuw")
+def nieuwwoord():    
+    return render_template("woordcombinationCreate.html")    
+
+@app.route("/nieuwwoordpost",methods=['POST'])
+def nieuwwoordPost():
+    nederlands = request.form.get("nederlands")
+    frans = request.form.get("frans") 
+    nieuw = { "nederlands": nederlands , "frans": frans}   
+    try: 
+        auth = HTTPBasicAuth('root','password')
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post("https://talenapi.peterkuda.be/api/addwordcombination", json=nieuw,auth=auth)
+        #response = requests.post("http://localhost:5009/api/addwordcombination", json=nieuw,auth=auth)
+        
+        #return redirect(url_for("https://talenapi.peterkuda.be/api/addwordcombination",data= nieuw)) 
+        #print(f"{response}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return render_template("woordcombinationCreate.html")    
 
 @app.errorhandler(500)
 
