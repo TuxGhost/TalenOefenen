@@ -5,9 +5,12 @@ from flask import session
 from flask import session
 from flask_cors import CORS
 from logging.config import dictConfig
+import requests
 import random
 import TaalModelPage
 from webapi.woordenlijstFrans import woordenlijstFrans_bp
+from flask_sqlalchemy import SQLAlchemy
+#from WoordCombinatie import WoordCombinatie
 
 
 random.seed()
@@ -16,6 +19,9 @@ app = Flask(__name__)
 CORS(app)
 
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///woordCombinaties.db'
+app.config['SQLACHEMY_TRACH_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 app.register_blueprint(woordenlijstFrans_bp)
 
 woordenGenereren = True
@@ -136,7 +142,21 @@ def controleerEN():
         tekst = 'Uw antwoord is fout.'
     return render_template('controleerEN.html', title = 'controle', tekst = tekst)
 
-
+@app.route("/lijst")
+def woordenlijst():        
+    try:
+        response = requests.get("https://talenapi.peterkuda.be/api/woordenlijst")
+        if response.status_code == 200:
+            json_data = response.json()
+            #woordcominbaties = [WoordCombinatie(**item) for item in json_data]
+            #return json_data
+            return render_template("woordenlijst.html",woordcombinatie = json_data)
+        else:
+    #//data = WoordCombinatie.query.all()
+            return render_template("woordenlijst.html")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 @app.errorhandler(500)
 
