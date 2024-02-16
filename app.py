@@ -12,18 +12,28 @@ import random
 import TaalModelPage
 from webapi.woordenlijstFrans import woordenlijstFrans_bp
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
+from sqlalchemy import MetaData, Table
+from flask import jsonify
+import os
+
 #from WoordCombinatie import WoordCombinatie
 
 
 random.seed()
-
+#db = SQLAlchemy()
 app = Flask(__name__)
-CORS(app)
 
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///woordCombinaties.db'
-app.config['SQLACHEMY_TRACH_MODIFICATIONS'] = False
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///woordCombinaties.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///d:\\sources\\Python\\TalenOefenen\\woordCombinaties.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+#db.init_app(app)
+#CORS(app)
+
+
+
 app.register_blueprint(woordenlijstFrans_bp)
 
 woordenGenereren = True
@@ -159,7 +169,38 @@ def woordenlijst():
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-    
+
+@app.route("/woorden")
+def woordenlijstDb():
+    try:                
+        connection = db.engine.raw_connection()
+        cursor = connection.cursor()
+        #cursor.execute('SELECT 1')
+        cursor.execute('SELECT Nederlands, Frans from WoordCombinaties')
+        #cursor.execute('SELECT * from "WoordCombinaties"')
+        result = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return jsonify({"result": "success" , "query_result": str(result)})        
+    except Exception as e:        
+        error_text = f"<p>{str(e)}</p>"
+        print(f"An error occurred: {e}")
+        return jsonify({"result" : "error", "message": str(e)})
+@app.route("/db")
+def dbinfo():
+    try:
+        database_path = os.path.abspath(app.config['SQLALCHEMY_DATABASE_URI'].replace('sqlite:///', ''))
+        #folder_contents = os.listdir(database_folder)
+        database_folder = os.path.dirname(database_path)        
+        metadata = MetaData()
+        metadata.reflect(bind=db.engine)
+        table_names = metadata.tables.keys()
+        return jsonify( {"result":"success", "tables": list(table_names) , "databaseFolder": database_folder })
+    except Exception as e:        
+        error_text = f"<p>{str(e)}</p>"
+        print(f"An error occurred: {e}")
+        return jsonify({"result" : "error", "message": str(e)})
+
 @app.route("/nieuw")
 def nieuwwoord():    
     return render_template("woordcombinationCreate.html")    
@@ -182,10 +223,9 @@ def nieuwwoordPost():
     return render_template("woordcombinationCreate.html")    
 
 @app.errorhandler(500)
-
-def foutboodschap():
-    render_template("error.html")
+def foutboodschap(error):
+    render_template("error.html"),500
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=9001)
+    app.run(host='0.0.0.0', port=9001 ,debug=True)
