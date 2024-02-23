@@ -2250,3 +2250,5 @@ env1/Scripts/py.test.exe
 env1/Scripts/pytest.exe
 env1/Scripts/python.exe
 env1/Scripts/pythonw.exe
+.vscode/launch.json
+.vscode/launch.json

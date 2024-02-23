@@ -204,25 +204,42 @@ def nieuwwoord():
 
 @app.route("/nieuwwoordpost",methods=['POST'])
 def nieuwwoordPost():
+    urlAction = request.host_url + "addwordcombination"
     nederlands = request.form.get("nederlands")
     frans = request.form.get("frans") 
     nieuw = { "nederlands": nederlands , "frans": frans}   
     try: 
         auth = HTTPBasicAuth('root','password')
-        headers = {'Content-Type': 'application/json'}
-        response = requests.post("https://talenapi.peterkuda.be/api/addwordcombination", json=nieuw,auth=auth)
-        #response = requests.post("http://localhost:5009/api/addwordcombination", json=nieuw,auth=auth)
-        
-        #return redirect(url_for("https://talenapi.peterkuda.be/api/addwordcombination",data= nieuw)) 
-        #print(f"{response}")
+        headers = {'Content-Type': 'application/json' , 'Accept': 'text/plain'}        
+        response = requests.post(urlAction,  json=nieuw, auth=auth , headers=headers)
+        print(f"{response}")
     except Exception as e:
         print(f"An error occurred: {e}")
     return render_template("woordcombinationCreate.html")    
+
+# post data to the database table
+@app.route('/addwordcombination',methods=['post'] )    
+def addwoordencombinatie():
+    data = request.json     
+    nederlands = data.get('nederlands')
+    frans = data.get('frans')
+    try:
+        connection = db.engine.raw_connection()
+        cursor = connection.cursor()        
+        cursor.execute('INSERT into WoordCombinaties ("nederlands", "frans") values (?, ? )', (nederlands,frans))                
+        connection.commit()        
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        connection.close()
+    return jsonify('Ok')
+
 
 @app.errorhandler(500)
 def foutboodschap(error):
     render_template("error.html"),500
 
-
+# run module as an application
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=9001 ,debug=True)
