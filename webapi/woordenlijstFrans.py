@@ -2,7 +2,7 @@ from flask import Blueprint, render_template,abort,jsonify,request
 from jinja2 import TemplateNotFound
 from flask_cors import CORS
 
-woordenlijstFrans_bp = Blueprint("talenPagina",__name__)
+woordenlijstFrans_bp = Blueprint("talenPagina",__name__ , url_prefix='/api')
 
 #talenPagina.route('/', defaults={'page' : 'index'})    
 

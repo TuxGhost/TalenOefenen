@@ -16,23 +16,16 @@ from sqlalchemy.sql import text
 from sqlalchemy import MetaData, Table
 from flask import jsonify
 import os
-
-#from WoordCombinatie import WoordCombinatie
-
+import WoordCombinatie
 
 random.seed()
-#db = SQLAlchemy()
 app = Flask(__name__)
 
 app.secret_key ="abcdefghijklmnopqrstuvwxyz"
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///woordCombinaties.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///d:\\sources\\Python\\TalenOefenen\\woordCombinaties.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-#db.init_app(app)
-#CORS(app)
-
-
+CORS(app)
 
 app.register_blueprint(woordenlijstFrans_bp)
 
@@ -154,34 +147,38 @@ def controleerEN():
         tekst = 'Uw antwoord is fout.'
     return render_template('controleerEN.html', title = 'controle', tekst = tekst)
 
-@app.route("/lijst")
+# show list of words 
+@app.route("/woordenlijst")
 def woordenlijst():        
-    try:
-        response = requests.get("https://talenapi.peterkuda.be/api/woordenlijst")
+    try:        
+        url = request.host_url + "woordenlijstjson"
+        response = requests.get(url)
         if response.status_code == 200:
-            json_data = response.json()
-            #woordcominbaties = [WoordCombinatie(**item) for item in json_data]
-            #return json_data
+            json_data = response.json()        
             return render_template("woordenlijst.html",woordcombinatie = json_data)
-        else:
-    #//data = WoordCombinatie.query.all()
+        else:    
             return render_template("woordenlijst.html")
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
-@app.route("/woorden")
-def woordenlijstDb():
+# retrieve list of word combination in json format
+@app.route("/woordenlijstjson")
+def woordenlijstjson():
     try:                
         connection = db.engine.raw_connection()
-        cursor = connection.cursor()
-        #cursor.execute('SELECT 1')
-        cursor.execute('SELECT Nederlands, Frans from WoordCombinaties')
-        #cursor.execute('SELECT * from "WoordCombinaties"')
-        result = cursor.fetchall()
+        cursor = connection.cursor()        
+        cursor.execute('SELECT Nederlands, Frans from WoordCombinaties')        
+        result = cursor.fetchall()        
         cursor.close()
-        connection.close()
-        return jsonify({"result": "success" , "query_result": str(result)})        
+        connection.close()        
+        data = []
+        for woord in result:    
+            woordCombinatie = {
+                    'nederlands':  woord[0],
+                    'frans': woord[1]                               
+                }            
+            data.append(woordCombinatie )
+        return jsonify(data);            
     except Exception as e:        
         error_text = f"<p>{str(e)}</p>"
         print(f"An error occurred: {e}")
