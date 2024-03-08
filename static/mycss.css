@@ -58,14 +58,17 @@ p {
 
 button {
         color:deeppink;
-        padding: 15;
-        height: 50px;
-        width: 180px;
+        padding: 20;
+        height: 75px;
+        width: 200px;
         font-size: large;
-        
+        margin: 25px;
 }
 .test {
         background-color: rgb(32, 56, 126);
         color: rgb(150, 156, 201);
         font-family:verdana;
+}
+ul {
+        list-style-type: none;
 }

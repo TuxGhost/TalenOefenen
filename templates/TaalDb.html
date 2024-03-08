@@ -1,0 +1,20 @@
+{%extends 'layout.html'%}
+{% block body_content %}
+        <div id="rechts">
+            <a href="/">Hoofdmenu</a>
+        </div>
+        <div>
+            <h1>Wat is de vertaling van "{{ model.Vraag }}" ? </h1>
+        </div>
+        <div> <p>Wat is je keuze ?</p>
+            <form action="/controleerDb" method="post">
+                <ul>
+                    <li><button type="submit" name="antwoordA" value="A">{{model.Antwoord}}</button></li>
+                    <li><button type="submit" name="antwoordB" value="B">{{model.Antiwoord}}</button></li>
+                    <li><button type="submit" name="antwoordC" value="C">{{model.Woordant}}</button></li>
+                </ul>
+            </form>
+        </div>
+        <div>
+        </div>
+{% endblock %}
