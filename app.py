@@ -34,6 +34,7 @@ fr = []
 nl = []
 en = []
 Enl = []
+dbWoorden = []
 lijstFr = open('./data/feest.txt','r')
 for text in lijstFr:
     w = text.split(",")
@@ -148,10 +149,10 @@ def controleerEN():
     return render_template('controleerEN.html', title = 'controle', tekst = tekst)
 
 # show list of words 
-@app.route("/woordenlijst")
+@app.route("/woordenlijsttonen")
 def woordenlijst():        
     try:        
-        url = request.host_url + "woordenlijstjson"
+        url = request.host_url + "woordenlijst"
         response = requests.get(url)
         if response.status_code == 200:
             json_data = response.json()        
@@ -162,7 +163,7 @@ def woordenlijst():
         print(f"An error occurred: {e}")
         return None
 # retrieve list of word combination in json format
-@app.route("/woordenlijstjson")
+@app.route("/woordenlijst")
 def woordenlijstjson():
     try:                
         connection = db.engine.raw_connection()
@@ -235,6 +236,61 @@ def addwoordencombinatie():
         connection.close()
     return jsonify('Ok')
 
+@app.route('/ondervraging')
+def ondervraging():
+    if len(dbWoorden) == 0:
+        try:        
+            url = request.host_url + "woordenlijst"
+            response = requests.get(url)
+            if response.status_code == 200:
+                json_data = response.json() 
+                for data in json_data:
+                    woordCombinatie = { 'nederlands':  data["nederlands"], 'frans': data["frans"] }            
+                    dbWoorden.append(woordCombinatie )                    
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return render_template("error.html")
+    lengte = len(dbWoorden)-1   
+    optieA = random.randint(0,lengte)
+    optieB = random.randint(0,lengte)  
+    optieC = random.randint(0,lengte)
+    optieABC = random.randint(0,2)
+    if optieA == optieB or optieB == optieC or optieC == optieA:
+        optieA = random.randint(0,lengte)
+        optieB = random.randint(0,lengte)  
+    oplossingA = nl[optieA]
+    oplossingB = nl[optieB]
+    oplossingC = nl[optieC]
+    if optieABC == 0:
+        fransWoord = fr[optieA]
+        session["oplossing"] = 'A'
+    if optieABC == 1:
+        fransWoord = fr[optieB]
+        session["oplossing"] = 'B'
+    if optieABC == 2:
+        fransWoord = fr[optieC]
+        session["oplossing"] = 'C'
+    taalModelPage =  TaalModelPage.TaalModelPage()
+    taalModelPage.Vraag = fransWoord
+    taalModelPage.Antwoord = oplossingA
+    taalModelPage.Antiwoord = oplossingB
+    taalModelPage.Woordant = oplossingC
+    return render_template('TaalDb.html', title='Quiz', model = taalModelPage)
+
+@app.route('/controleerDb',methods=['POST'])
+def controleerDb():
+    antwoordA = request.form.get("antwoordA")
+    antwoordB = request.form.get("antwoordB")
+    antwoordC = request.form.get("antwoordC")
+    opl = session.get("oplossing")
+    print("oplossing: ")
+    print(opl)
+    tekst = 'Wat denk je zelf?'
+    if antwoordA == session["oplossing"] or antwoordB == session["oplossing"] or antwoordC== session["oplossing"]:
+        tekst = 'Uw antwoord is correct.'
+    else:
+        tekst = 'Uw antwoord is fout.'
+    return render_template('controleerDb.html', title = 'controle', tekst = tekst)
 
 @app.errorhandler(500)
 def foutboodschap(error):
