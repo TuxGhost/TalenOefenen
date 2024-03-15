@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python Debugger: Talen oefenen",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "app.py"
+        },
+        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
