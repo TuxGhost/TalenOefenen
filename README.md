@@ -1,5 +1,5 @@
 # TalenOefenen
-  OP DE LOCALE COMPUTER INSTALLEREN:
+##  OP DE LOCALE COMPUTER INSTALLEREN:
 -   Ga naar de hoofdmap waar je de broncode wilt zetten.
 -     Je kan via de Windows Exploren naar de map gaan en vervolgens in de locatie klikken en  vervolgens CMD intyppen + enter
 -   Tik nu : git clone https://github.com/TuxGhost/TalenOefenen.git
@@ -22,3 +22,9 @@ via Run en debug start je de toepasssing
 
 Je kan de echte werking van het programma zien in de web explorer (Chrome, edge, ...)
 type : http://localhost:81 
+
+# Controleer je python installatie
+## Microsoft Windows
+where python (where pip)
+
+Indien je nooit een environment hebt aangemaakt, wordt de eerste gebruikt.
