@@ -28,3 +28,18 @@ type : http://localhost:81
 where python (where pip)
 
 Indien je nooit een environment hebt aangemaakt, wordt de eerste gebruikt.
+
+
+## Conda 
+
+### Commands
+conda info --envs -> List environments
+conda activate --stack myenv  -> activate an environemnt
+
+## Visual Code
+### Market place
+Python Environment Manager
+
+
+
+
